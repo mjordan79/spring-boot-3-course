@@ -6,20 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /*
- * Setter Injection Example.
- * Generally used for optional dependencies.
+ * Field Injection Example.
+ * No longer used and discouraged by the Spring team.
+ * It makes the code harder to unit test.
  */
 @RestController
-public class DemoSetterInjectionController {
-
-    private Coach myCoach;
+public class DemoFieldInjectionController {
 
     @Autowired
-    public void setMyCoach(Coach myCoach) {
-        this.myCoach = myCoach;
-    }
+    private Coach myCoach;
 
-    @GetMapping("/dailyworkoutsetter")
+    @GetMapping("/dailyworkoutfield")
     public String getDailyWorkout() {
         return this.myCoach.getDailyWorkout();
     }
