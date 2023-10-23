@@ -1,5 +1,6 @@
-package it.digitalnucleus.springcoredemo;
+package it.digitalnucleus.springcoredemo.rest;
 
+import it.digitalnucleus.outsidepackage.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
  * Generally used for mandatory dependencies.
  */
 @RestController
-public class DemoController {
+public class DemoConstructorInjectionController {
     private final Coach myCoach;
 
     @Autowired
-    public DemoController(Coach coach) {
+    public DemoConstructorInjectionController(Coach coach) {
         this.myCoach = coach;
     }
 
-    @GetMapping("/dailyworkout")
+    @GetMapping("/dailyworkoutconstructor")
     public String getDailyWorkout() {
         return this.myCoach.getDailyWorkout();
     }

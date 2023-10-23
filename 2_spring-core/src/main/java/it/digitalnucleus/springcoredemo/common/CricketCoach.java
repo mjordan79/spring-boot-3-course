@@ -1,5 +1,6 @@
-package it.digitalnucleus.springcoredemo;
+package it.digitalnucleus.springcoredemo.common;
 
+import it.digitalnucleus.outsidepackage.Coach;
 import org.springframework.stereotype.Component;
 
 @Component
