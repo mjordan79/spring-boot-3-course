@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class BaseballCoach implements Coach {
 
+    // It will print a message during startup while instantiating beans.
     public BaseballCoach() {
-        System.out.println("In constructor: " + this.getClass().getName());
+        System.out.println("In constructor: " + this.getClass().getSimpleName());
     }
 
     @Override
