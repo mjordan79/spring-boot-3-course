@@ -5,7 +5,9 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-// Remember: by default Spring Beans are Singletons (all injections use the same instance)
+/* Remember: by default Spring Beans are Singletons (all injections use the same instance)
+ * Prototype scoped beans are @Lazy by default. Also, Spring won't invoke @PreDestroy methods.
+ */
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BaseballCoach implements Coach {
