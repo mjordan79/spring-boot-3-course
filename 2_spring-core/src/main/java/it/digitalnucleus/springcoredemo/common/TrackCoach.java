@@ -1,9 +1,11 @@
 package it.digitalnucleus.springcoredemo.common;
 
 import it.digitalnucleus.outsidepackage.Coach;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
+@Lazy
 public class TrackCoach implements Coach {
 
     // It will print a message during startup while instantiating beans.
