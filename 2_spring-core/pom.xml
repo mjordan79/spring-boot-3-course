@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>it.digitalnucleus</groupId>
-	<artifactId>spring-core-demo</artifactId>
+	<artifactId>springcoredemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-core-demo</name>
+	<name>springcoredemo</name>
 	<description>Demo Project for Spring Core features</description>
 
 	<properties>
