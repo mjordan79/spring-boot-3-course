@@ -1,9 +1,13 @@
 package it.digitalnucleus.springcoredemo.common;
 
 import it.digitalnucleus.outsidepackage.Coach;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+// Remember: by default Spring Beans are Singletons (all injections use the same instance)
 @Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BaseballCoach implements Coach {
 
     // It will print a message during startup while instantiating beans.

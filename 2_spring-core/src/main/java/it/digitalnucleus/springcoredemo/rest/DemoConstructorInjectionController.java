@@ -13,16 +13,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoConstructorInjectionController {
     private final Coach myCoach;
+    private final Coach anotherCoach;
 
     @Autowired
-    public DemoConstructorInjectionController(@Qualifier("baseballCoach") Coach coach) {
+    public DemoConstructorInjectionController(
+            @Qualifier("baseballCoach") Coach coach,
+            @Qualifier("baseballCoach") Coach anotherCoach) {
         System.out.println("In constructor: " + this.getClass().getSimpleName());
         this.myCoach = coach;
+        this.anotherCoach = anotherCoach;
     }
 
     @GetMapping("/dailyworkoutconstructor")
     public String getDailyWorkout() {
         return this.myCoach.getDailyWorkout();
+    }
+
+    @GetMapping("/check")
+    public String check() {
+        return "myCoach == anotherCoach: " + (myCoach == anotherCoach);
     }
 
 }
