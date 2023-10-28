@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>it.digitalnucleus</groupId>
-	<artifactId>1_spring_boot_3_quickstart</artifactId>
+	<artifactId>springboot3quickstart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>springboot3quickstart</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
