@@ -1,10 +1,10 @@
-package it.digitalnucleus.springcoredemo;
+package it.digitalnucleus.springhibernatedemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringHibernateDemoApplicationTests {
+class SpringhibernatedemoApplicationTests {
 
 	@Test
 	void contextLoads() {
