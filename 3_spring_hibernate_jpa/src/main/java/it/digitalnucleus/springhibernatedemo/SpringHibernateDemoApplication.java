@@ -15,12 +15,27 @@ public class SpringHibernateDemoApplication {
 		SpringApplication.run(SpringHibernateDemoApplication.class, args);
 	}
 
-	private void createStudent(StudentDAO studentDAO) {
-		System.out.println("Creating new student object ...");
-		Student student = new Student("Renato", "Perini", "renato.perini@gmail.com");
-		System.out.println("Saving the student ...");
-		studentDAO.save(student);
-		System.out.println("Saved student. Generated ID: " + student.getId());
+	private void createMultipleStudents(StudentDAO studentDAO) {
+		System.out.println("Creating 4 students ...");
+		Student s1 = new Student("Renato", "Perini", "renato.perini@gmail.com");
+		Student s2 = new Student("Giovanni", "Gallo", "james.gosling@sun.com");
+		Student s3 = new Student("Mark", "Reinholds", "mark.reinholds@oracle.com");
+		Student s4 = new Student("Brian", "Goetz", "brian.goetz@oracle.com");
+		studentDAO.save(s1);
+		studentDAO.save(s2);
+		studentDAO.save(s3);
+		studentDAO.save(s4);
+	}
+
+	private void findStudent(StudentDAO studentDAO) {
+		System.out.println("Finding students ...");
+		int i = 0;
+		Student found;
+		do {
+			i++;
+			found = studentDAO.findById(i);
+			if (found != null) System.out.println("Found: " + found);
+		} while (found != null);
 	}
 
     /*
@@ -30,7 +45,8 @@ public class SpringHibernateDemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(@Qualifier("studentDAOImpl") StudentDAO studentDAO) {
 		return runner -> {
-			createStudent(studentDAO);
+			createMultipleStudents(studentDAO);
+			findStudent(studentDAO);
 		};
     }
 }

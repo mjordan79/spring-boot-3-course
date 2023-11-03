@@ -4,6 +4,7 @@ services:
     image: mysql:8.0
     command: --default-authentication-plugin=caching_sha2_password
     restart: always
+    pull_policy: always
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
